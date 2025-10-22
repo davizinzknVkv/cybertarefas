@@ -1,0 +1,416 @@
+/* Importando a fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #121212; /* Fundo escuro sólido */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 10% 20%, rgba(152, 151, 26, 0.1), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(50, 50, 60, 0.2), transparent 40%);
+    z-index: -1;
+}
+
+#centralizar {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+#form {
+    background: rgba(40, 40, 40, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#Enviar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: rgba(184, 187, 38, 0.7);
+    box-shadow: 0 0 15px rgba(184, 187, 38, 0.2);
+}
+
+input::placeholder {
+    color: #888;
+}
+
+.Mostrar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#VerSenha {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 1.3em;
+    transition: color 0.3s ease;
+}
+
+#VerSenha:hover {
+    color: #b8bb26;
+}
+
+.btn-acao {
+    background: #b8bb26;
+    color: #1d2021;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-acao:hover {
+    background: #98971a;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-acao:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+#TamanhoN {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    background: rgba(40, 40, 40, 0.6);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.Notificacao {
+    background: rgba(184, 187, 38, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px;
+    color: #e0e0e0;
+    animation: aparecer 0.5s ease-out;
+    border: 1px solid rgba(184, 187, 38, 0.2);
+}
+
+.Notificacao h1 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #b8bb26;
+}
+
+.Notificacao p {
+    font-size: 0.9em;
+    color: #cccccc;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sumir {
+    to {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
+/* Estilização da barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(184, 187, 38, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(184, 187, 38, 0.7);
+}
+
+/* --- Estilos para o Modal de Processamento --- */
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    position: relative;
+    background: #282828;
+    color: #f5f5f7;
+    padding: 30px 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: all 0.3s ease;
+    transform: scale(0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-overlay.show .modal-container {
+    transform: scale(1);
+}
+
+.modal-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.modal-title::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 10px;
+    background-color: #b8bb26;
+    border-radius: 5px;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-left-color: #ffffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+.warning-box {
+    background-color: rgba(184, 187, 38, 0.1);
+    color: #b8bb26;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 25px;
+    border: 1px solid rgba(184, 187, 38, 0.2);
+    font-size: 0.9em;
+}
+
+.modal-controls {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.modal-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #f5f5f7;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    line-height: 1;
+}
+
+.modal-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#minimizeModalBtn {
+    padding-bottom: 4px;
+}
+
+.modal-container.minimized {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transform: none;
+}
+
+.modal-container.minimized .modal-content,
+.modal-container.minimized .modal-controls,
+.modal-container.minimized .modal-title::after {
+    display: none;
+}
+
+.modal-container.minimized .modal-title {
+    margin-bottom: 0;
+    font-size: 1em;
+    text-align: left;
+}
+
+/* --- Estilos para o Modal de Seleção de Tarefas --- */
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.task-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.task-title {
+    font-weight: 500;
+    color: #f5f5f7;
+}
+
+.task-type {
+    font-size: 0.8em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 5px;
+    align-self: flex-start;
+}
+
+.task-type.normal { background-color: #3478f6; color: white; }
+.task-type.expirada { background-color: #f63d34; color: white; }
+.task-type.rascunho { background-color: #8e8e93; color: white; }
+
+.do-task-btn {
+    background: #b8bb26;
+    color: #1d2021;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.do-task-btn:hover {
+    background: #98971a;
+}
